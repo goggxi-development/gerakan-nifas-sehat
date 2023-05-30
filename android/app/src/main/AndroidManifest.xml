@@ -4,7 +4,7 @@
    <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="Gerakan Nifas Sehat"
+        android:label="GNS"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

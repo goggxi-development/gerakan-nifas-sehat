@@ -48,7 +48,7 @@ Future<void> main() async {
     (value) {
       return runApp(
         DevicePreview(
-          enabled: !kReleaseMode,
+          enabled: kReleaseMode,
           builder: (context) {
             return ScreenUtilInit(
               designSize: const Size(392, 852),
@@ -64,7 +64,7 @@ Future<void> main() async {
                   onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                   child: GetMaterialApp(
                     debugShowCheckedModeBanner: false,
-                    title: "Gerakan Nifas Sehat",
+                    title: "GNS",
                     home: SplashPage(boxData: boxData),
                     getPages: AppPages.routes,
                     locale: DevicePreview.locale(context),

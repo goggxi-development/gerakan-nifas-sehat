@@ -44,10 +44,15 @@ class FavouriteView extends GetView<FavouriteController> {
           sliver: SliverToBoxAdapter(
             child: Container(
               padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: kPrimary,
-                borderRadius: BorderRadius.circular(12.r),
-              ),
+              // decoration: BoxDecoration(
+              //   border: Border.all(
+              //     color: Colors.black,
+              //     width: 0.5,
+              //   ),
+              //   borderRadius: BorderRadius.circular(
+              //     12.r,
+              //   ),
+              // ),
               child: Stack(
                 children: [
                   Center(

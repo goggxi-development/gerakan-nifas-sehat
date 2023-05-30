@@ -14,71 +14,82 @@ class AboutUsView extends GetView<AboutUsController> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(width: MediaQuery.of(context).size.width),
-              const Text(
+              Text(
                 "Aplikasi android gerak nifas sehat (GNS) adalah aplikasi berbasis android yang menyediakan informasi kesehatan dimanakah fitur didalamnya terdapat pengetahuan senam nifas, gerakan senam nifas ini untuk ibu yang persalinanya normal\n\n",
-                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14.sp),
               ),
-              const Text(
+              Text(
                 "Aplikasi ini di buat oleh Gefi Nursetiawanti berkolaborasi dengan programmer\n\n",
-                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14.sp),
               ),
-              const Text("Sumber Buku:", textAlign: TextAlign.center),
-              const Text(
+              Text(
+                "Sumber Buku:",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14.sp),
+              ),
+              Text(
                 "Zubaidah, Rusdiana, Norfitri R, Pusparina I. 2021. Asuhan Keperawatan Nifas\n\n",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
-              const Text("Sumber Jurnal:", textAlign: TextAlign.center),
-              const Text(
+              Text("Sumber Jurnal:",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14.sp)),
+              Text(
                 "Zakiyyah, M. et al. Pendidikan Kesehatan Dan Pelatihan Senam Nifas. Jurnal Pengabdian Kepada Masyarakat. 2018\n\n",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
-              const Text("Pembimbing :", textAlign: TextAlign.center),
-              const Text(
+              Text("Pembimbing :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14.sp)),
+              Text(
                 "1. Siti Saadah Mardiah, S.SiT., MPH",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
-              const Text(
+              Text(
                 "2. Nita Nurvita, SST,  M.Keb\n\n",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
-              const Text("Ahli materi :", textAlign: TextAlign.center),
-              const Text(
+              Text("Ahli materi :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14.sp)),
+              Text(
                 "1. Sariestya Rismawati, SST., M.Keb\n\n",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
-              const Text("Ahli media :", textAlign: TextAlign.center),
-              const Text(
+              Text("Ahli media :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14.sp)),
+              Text(
                 "1. I Eka mulyana., M.Kom\n\n",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
                     "assets/images/wa.png",
                     height: 30.w,
                     width: 30.w,
                   ),
-                  const Text("  081333311617", textAlign: TextAlign.center),
+                  Text("  081333311617",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 14.sp)),
                 ],
-              ),
+              ).paddingOnly(bottom: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
                     "assets/images/ig.png",
                     height: 30.w,
                     width: 30.w,
                   ),
-                  const Text("  gefi_n", textAlign: TextAlign.center),
+                  Text("  gefi_n",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 14.sp)),
                 ],
               ),
             ],
