@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hamil_sehat/app/components/images.dart';
 import 'package:hamil_sehat/app/components/youtube_player.dart';
+import 'package:hamil_sehat/app/utils/insert_data.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -89,14 +90,24 @@ class DetailGerakanView extends GetView<DetailGerakanController> {
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
-                            Text(
-                              "Hari\nKe-${Get.arguments + 1}",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.bold),
+                            Visibility(
+                              visible:
+                                  gerakanNifasModel.title == gerakanNifasAll
+                                      ? false
+                                      : true,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Hari\nKe-${Get.arguments}",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  10.horizontalSpace,
+                                ],
+                              ),
                             ),
-                            10.horizontalSpace,
                             const Icon(
                               Icons.arrow_forward_outlined,
                               color: white,
@@ -145,15 +156,12 @@ class DetailGerakanView extends GetView<DetailGerakanController> {
                       ),
                     ),
                     20.verticalSpace,
-                    SizedBox(
-                      height: 0.3.sh,
-                      child: Text(
-                        gerakanNifasModel.description,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          height: 1.5,
-                        ),
+                    Text(
+                      gerakanNifasModel.description,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        height: 1.5,
                       ),
                     ),
                   ],

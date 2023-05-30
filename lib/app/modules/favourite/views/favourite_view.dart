@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:hamil_sehat/app/data/gerakan_nifas_model.dart';
 import 'package:hamil_sehat/app/music_controller.dart';
 import 'package:hamil_sehat/app/routes/app_pages.dart';
+import 'package:hamil_sehat/app/utils/insert_data.dart';
 import 'package:hive/hive.dart';
 
 import '../../../components/colors.dart';
@@ -143,14 +144,24 @@ class FavouriteView extends GetView<FavouriteController> {
                                   padding: const EdgeInsets.all(12.0),
                                   child: Row(
                                     children: [
-                                      Text(
-                                        "Hari\nKe-${index + 1}",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.bold),
+                                      Visibility(
+                                        visible: gerakanNifasModel.title ==
+                                                gerakanNifasAll
+                                            ? false
+                                            : true,
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              "Hari\nKe-$index ",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            10.horizontalSpace,
+                                          ],
+                                        ),
                                       ),
-                                      10.horizontalSpace,
                                       const Icon(
                                         Icons.arrow_forward_outlined,
                                         color: white,
