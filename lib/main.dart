@@ -34,10 +34,11 @@ Future<void> main() async {
 
   openedData.put(0, 0);
 
-  if (box.read('opened') == 0) {
     insertInitialData();
-    box.write('opened', 1);
-  }
+  // if (box.read('opened') == 0) {
+  //   insertInitialData();
+  //   box.write('opened', 1);
+  // }
 
   SystemChrome.setPreferredOrientations(
     [
@@ -48,7 +49,7 @@ Future<void> main() async {
     (value) {
       return runApp(
         DevicePreview(
-          enabled: kReleaseMode,
+          enabled: !kReleaseMode,
           builder: (context) {
             return ScreenUtilInit(
               designSize: const Size(392, 852),

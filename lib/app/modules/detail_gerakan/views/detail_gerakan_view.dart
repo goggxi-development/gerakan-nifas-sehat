@@ -134,6 +134,7 @@ class DetailGerakanView extends GetView<DetailGerakanController> {
                                     title: gerakanNifasModel.title,
                                     description: gerakanNifasModel.description,
                                     media: gerakanNifasModel.media,
+                                    number: gerakanNifasModel.number,
                                     isFavourite: controller.isFavourite.value,
                                   ),
                                 );

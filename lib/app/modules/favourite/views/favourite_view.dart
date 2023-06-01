@@ -122,11 +122,13 @@ class FavouriteView extends GetView<FavouriteController> {
                       );
                     } else {
                       var gerakanNifas = Hive.box('gerakanNifases');
+                      List list = gerakanNifas.values.toList();
+                      list.sort((a, b) => a.number.compareTo(b.number));
                       return SliverList.builder(
-                        itemCount: gerakanNifas.length,
+                        itemCount: list.length,
                         itemBuilder: (context, index) {
-                          GerakanNifasModel gerakanNifasModel =
-                              gerakanNifas.getAt(index);
+                          final gerakanNifasModel =
+                              list[index] as GerakanNifasModel;
                           return Visibility(
                             visible: gerakanNifasModel.isFavourite ?? false,
                             child: Card(

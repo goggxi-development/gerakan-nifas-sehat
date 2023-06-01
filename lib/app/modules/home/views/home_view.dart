@@ -505,11 +505,14 @@ class HomeWidget extends GetView<MusicController> {
                   );
                 } else {
                   var gerakanNifas = Hive.box('gerakanNifases');
+                  List list = gerakanNifas.values.toList();
+                  list.sort((a, b) => a.number.compareTo(b.number));
+
                   return SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (context, index) {
-                        GerakanNifasModel nifasModel =
-                            gerakanNifas.getAt(index);
+                        final nifasModel = list[index] as GerakanNifasModel;
+
                         return Card(
                           margin: EdgeInsets.only(bottom: 10.h),
                           color: kPrimary,
@@ -566,7 +569,7 @@ class HomeWidget extends GetView<MusicController> {
                           ),
                         );
                       },
-                      childCount: gerakanNifas.length,
+                      childCount: list.length,
                     ),
                   );
                 }

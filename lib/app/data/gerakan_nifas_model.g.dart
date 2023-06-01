@@ -21,13 +21,14 @@ class GerakanNifasModelAdapter extends TypeAdapter<GerakanNifasModel> {
       description: fields[1] as String,
       media: fields[2] as String,
       isFavourite: fields[3] as bool?,
+      number: fields[4] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, GerakanNifasModel obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class GerakanNifasModelAdapter extends TypeAdapter<GerakanNifasModel> {
       ..writeByte(2)
       ..write(obj.media)
       ..writeByte(3)
-      ..write(obj.isFavourite);
+      ..write(obj.isFavourite)
+      ..writeByte(4)
+      ..write(obj.number);
   }
 
   @override

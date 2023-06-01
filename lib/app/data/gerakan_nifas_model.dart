@@ -12,11 +12,14 @@ class GerakanNifasModel {
   final String media;
   @HiveField(3)
   bool? isFavourite;
+  @HiveField(4)
+  final int number;
 
   GerakanNifasModel({
     required this.title,
     required this.description,
     required this.media,
     required this.isFavourite,
+    required this.number,
   });
 }
