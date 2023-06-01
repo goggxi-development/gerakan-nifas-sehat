@@ -34,11 +34,10 @@ Future<void> main() async {
 
   openedData.put(0, 0);
 
+  if (box.read('opened') == 0) {
     insertInitialData();
-  // if (box.read('opened') == 0) {
-  //   insertInitialData();
-  //   box.write('opened', 1);
-  // }
+    box.write('opened', 1);
+  }
 
   SystemChrome.setPreferredOrientations(
     [

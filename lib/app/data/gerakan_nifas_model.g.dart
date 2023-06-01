@@ -17,27 +17,30 @@ class GerakanNifasModelAdapter extends TypeAdapter<GerakanNifasModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return GerakanNifasModel(
-      title: fields[0] as String,
-      description: fields[1] as String,
-      media: fields[2] as String,
-      isFavourite: fields[3] as bool?,
-      number: fields[4] as int,
+      id: fields[0] as String,
+      title: fields[1] as String,
+      description: fields[2] as String,
+      media: fields[3] as String,
+      isFavourite: fields[4] as bool?,
+      number: fields[5] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, GerakanNifasModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
-      ..write(obj.title)
+      ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.description)
+      ..write(obj.title)
       ..writeByte(2)
-      ..write(obj.media)
+      ..write(obj.description)
       ..writeByte(3)
-      ..write(obj.isFavourite)
+      ..write(obj.media)
       ..writeByte(4)
+      ..write(obj.isFavourite)
+      ..writeByte(5)
       ..write(obj.number);
   }
 

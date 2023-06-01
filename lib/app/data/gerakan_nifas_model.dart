@@ -5,17 +5,20 @@ part "gerakan_nifas_model.g.dart";
 @HiveType(typeId: 0)
 class GerakanNifasModel {
   @HiveField(0)
-  final String title;
+  final String id;
   @HiveField(1)
-  final String description;
+  final String title;
   @HiveField(2)
-  final String media;
+  final String description;
   @HiveField(3)
-  bool? isFavourite;
+  final String media;
   @HiveField(4)
+  bool? isFavourite;
+  @HiveField(5)
   final int number;
 
   GerakanNifasModel({
+    required this.id,
     required this.title,
     required this.description,
     required this.media,

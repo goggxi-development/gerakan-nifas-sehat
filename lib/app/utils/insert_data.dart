@@ -10,6 +10,7 @@ void insertInitialData() {
   box.put(
     'nifas0',
     GerakanNifasModel(
+      id: "nifas0",
       title: gerakanNifasAll,
       description: """
 Cara melakukan gerakan senam nifas
@@ -71,6 +72,7 @@ Manfaat : Membangun kekuatan otot pada otot perut dan pinggul.
   box.put(
     'nifas1',
     GerakanNifasModel(
+      id: "nifas1",
       title: "Olah Napas",
       description: """
 Pada hari pertama, gerakan senam nifas dilakukan secara sederhana. Yaitu dengan melakukan latihan pernapasan. Ibu berbaring dengan nyaman di tempat yang datar, lalu melakukan tarik napas dalam, tahan napas dalam hitungan ke 5 atau hitung sampai 8, setelah itu keluarkan secara perlahan.
@@ -86,6 +88,7 @@ Manfaat : Setelah melahirkan peredaran darah dan pernafasan belum kembali normal
   box.put(
     'nifas2',
     GerakanNifasModel(
+      id: "nifas2",
       title: "Tangan Membuka Dan Menutup",
       description: """
 Pada hari kedua, gerakan mulai ditingkatkan. Posisi ibu masih sama, yaitu berbaring pada tempat yang datar dan aman. Lebarkan kedua tangan ibu sampai sejajar dengan bahu, lalu gerakan dengan lurus kedua tangan sampai bertemu di atas kepala.
@@ -101,6 +104,7 @@ Manfaat : Latihan ini di tujukan untuk memulihakan dan menguatkan kembali otot-o
   box.put(
     'nifas3',
     GerakanNifasModel(
+      id: "nifas3",
       title: "Gerak Pantat",
       description: """
 Pada hari ketiga, posisi dilakukan dengan berbaring, namun telapak kaki menyentuh lantai. Sehingga lutut akan tampak seperti ditekuk. Angkat pantat keatas, lalu tahan dan hitung sampai 3 atau 5, turunkan pantat secara perlahan.
@@ -116,6 +120,7 @@ Manfaat: Latihan ini di tujukan untuk menguatkan kembali otot-otot daar panggul 
   box.put(
     'nifas4',
     GerakanNifasModel(
+      id: "nifas4",
       title: "Gerak Atas",
       description: """
 Pada hari selanjutnya, yaitu menggerakan anggota badan bagian atas. Posisi tubuh terlentang, dengan telapak kaki menyentuh lantai, dan lutut ditekuk dengan sudut 45 derajat. Lalu gunakan satu tangan untuk memegang perut.
@@ -131,6 +136,7 @@ Manfaat : Latihan ini bertujuan untuk melatih sekaligus otot-otot tubuh diantara
   box.put(
     'nifas5',
     GerakanNifasModel(
+      id: "nifas5",
       title: "Gerak Atas Dan Tangan",
       description: """
 Pada hari kelima gerakan dilakukan dengan posisi terlentang. Tekuk salah satu kaki dengan sudut 45 derajat, lalu angkat tubuh serta tangan yang berlawanan. Jika lutut yang ditekuk sebelah kiri, maka tangan yang digunakan yaitu sebelah kanan (begitu juga sebaliknya).
@@ -146,6 +152,7 @@ Manfaat : Latihan ini bertujuan untuk melatih sekaligus otot-otot tubuh diantara
   box.put(
     'nifas6',
     GerakanNifasModel(
+      id: "nifas6",
       title: "Gerak Tekuk Kaki",
       description: """
 Pada hari keenam, latihan dilanjutkan kebagian anggota gerak bawah. Posisi dilakukan dengan berbaring (terlentang), tekuk lutut sampai membetuk sudut lurus ke atas (sudut 90 derajat). Lakukan gerakan ini secara bergantian antara kaki kiri dan kaki kanan.
@@ -161,6 +168,7 @@ Manfaat : Latihan ini ditujukan untuk menguatkan otot-otot di kaki yang selama k
   box.put(
     'nifas7',
     GerakanNifasModel(
+      id: "nifas7",
       title: "Gerak Angkat Kaki",
       description: """
 Pada hari ketujuh, pergerakan dilanjutkan dengan mengangkat kaki ke atas. Posisi tubuh terbaring (terlentang) pada tempat datar dan aman. Angkat kaki ke atas kurang lebih setinggi 20 cm sampai 30 cm. Turunkan secara perlahan, dan lakukan secara bergantian antara kaki kiri dengan kaki yang kanan.
@@ -176,6 +184,7 @@ Manfaat : menguatkan otot otot di kaki dan melancarkan sirkulasi darah
   box.put(
     'nifas8',
     GerakanNifasModel(
+      id: "nifas8",
       title: "Gerak Perut",
       description: """
 Pada hari ke delapan, posisi sudah tidak berbaring lagi. Dimana posisi tubuh tampak seperti bayi yang merangkak. Angkat perut ibu ke atas dan kebawah (gerakan dilakukan hanya otot perut saja), lakukan gerakan ini sebanyak 5 sampai 10 kali.
@@ -190,6 +199,7 @@ Manfaat : untuk menguatkan otot bagian perut dan memperbaiki sikap tubuh  dan  p
   box.put(
     'nifas9',
     GerakanNifasModel(
+      id: "nifas9",
       title: "Angkat 2 Kaki",
       description: """
 Pada hari ke sembilan, posisi tubuh kembali terlentang. Rapatkan kedua kaki, lalu angkat kedua kaki secara bersamaan dengan sudut lurus atau membentuk sudut 90 derajat. Turunkan kedua kaki kebawah secara perlahan, dan lakukan gerakan ini sebanyak 5 sampai 10 kali gerakan.
@@ -204,6 +214,7 @@ Manfaat : membawa oksigen ke bagian atas tubuh, yang berarti sirkulasi aliran da
   box.put(
     'nifas10',
     GerakanNifasModel(
+      id: "nifas10",
       title: "Gerak Sit-Up",
       description: """
 Pada hari terakhir senam nifas, yaitu gerakan sit –up. Mula-mula tubuh pada posisi terlentang, taruh kedua tangan dibawah kepala, dan angkat tubuh sampai membentuk posisi duduk. Lakukan gerakan ini sebanyak 5 sampai 10 kali.

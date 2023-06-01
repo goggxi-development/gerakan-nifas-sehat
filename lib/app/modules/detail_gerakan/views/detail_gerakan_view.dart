@@ -31,8 +31,11 @@ class DetailGerakanView extends GetView<DetailGerakanController> {
               return Text(snapshot.error.toString());
             } else {
               var gerakanNifas = Hive.box('gerakanNifases');
-              GerakanNifasModel gerakanNifasModel =
-                  gerakanNifas.getAt(Get.arguments);
+              List list = gerakanNifas.values.toList();
+              list.sort((a, b) => a.number.compareTo(b.number));
+              final gerakanNifasModel =
+                  list[Get.arguments] as GerakanNifasModel;
+
               controller.isFavourite.value =
                   gerakanNifasModel.isFavourite ?? false;
               return SingleChildScrollView(
@@ -128,9 +131,10 @@ class DetailGerakanView extends GetView<DetailGerakanController> {
                             IconButton(
                               onPressed: () {
                                 controller.isFavourite.toggle();
-                                gerakanNifas.putAt(
-                                  Get.arguments,
+                                gerakanNifas.put(
+                                  gerakanNifasModel.id,
                                   GerakanNifasModel(
+                                    id: gerakanNifasModel.id,
                                     title: gerakanNifasModel.title,
                                     description: gerakanNifasModel.description,
                                     media: gerakanNifasModel.media,

@@ -190,8 +190,10 @@ class FavouriteView extends GetView<FavouriteController> {
                                         onPressed: () {
                                           gerakanNifasModel.isFavourite =
                                               !gerakanNifasModel.isFavourite!;
-                                          gerakanNifas.putAt(
-                                              index, gerakanNifasModel);
+                                          gerakanNifas.put(
+                                            gerakanNifasModel.id,
+                                            gerakanNifasModel,
+                                          );
                                           controller.update();
                                         },
                                         icon: Icon(
