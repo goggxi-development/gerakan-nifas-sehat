@@ -16,16 +16,19 @@ class PengantarView extends GetView<PengantarController> {
         centerTitle: true,
         backgroundColor: kPrimary,
       ),
-      body: RawScrollbar(
-        thumbVisibility: true,
-        thickness: 7.sp,
-        thumbColor: Colors.grey,
-        notificationPredicate: (notification) => true,
-        radius: const Radius.circular(20),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: const AssetImage("assets/images/lg0.png"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              white.withOpacity(0.07),
+              BlendMode.dstATop,
+            ),
+          ),
+        ),
         child: ListView(
           padding: const EdgeInsets.all(20),
-          shrinkWrap: true,
-          physics: const ScrollPhysics(),
           children: [
             Text(
               Get.arguments,
