@@ -185,220 +185,250 @@ class IntoducionWidget extends GetView<MusicController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        50.verticalSpace,
-        Text(
-          "Hi, ${homeController.introductionC.user.name}",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24.sp,
-          ),
-        ).paddingSymmetric(horizontal: 20.w),
-        10.verticalSpace,
-        Expanded(
-          child: RawScrollbar(
-            thumbVisibility: true,
-            thickness: 4.sp,
-            thumbColor: kPrimary,
-            notificationPredicate: (notification) => true,
-            radius: const Radius.circular(20),
-            child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              shrinkWrap: true,
-              physics: const ScrollPhysics(),
-              children: [
-                Text(
-                  introductionText,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    height: 1.5,
-                  ),
-                ).paddingOnly(right: 20.w),
-                Card(
-                  margin: EdgeInsets.zero,
-                  color: kPrimary,
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      controller.audioPlayer.pause();
-                      controller.isMusicPlayed.value = false;
-                      Get.toNamed(
-                        Routes.PENGANTAR,
-                        arguments: manfaatSenamNifas,
-                      );
-                    },
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/images/lg0.png",
-                          height: 80.w,
-                          width: 80.w,
-                        ),
-                        10.horizontalSpace,
-                        Expanded(
-                          child: Text(
-                            "Manfaat Senam Nifas",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                        ),
-                        10.horizontalSpace,
-                        const Icon(
-                          Icons.arrow_forward_outlined,
-                          color: white,
-                        ),
-                        10.horizontalSpace,
-                      ],
-                    ),
-                  ),
-                ).paddingOnly(bottom: 10.h),
-                Card(
-                  margin: EdgeInsets.zero,
-                  color: kPrimary,
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      controller.audioPlayer.pause();
-                      controller.isMusicPlayed.value = false;
-                      Get.toNamed(
-                        Routes.PENGANTAR,
-                        arguments: tujuanSenamNifas,
-                      );
-                    },
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/images/lg0.png",
-                          height: 80.w,
-                          width: 80.w,
-                        ),
-                        10.horizontalSpace,
-                        Expanded(
-                          child: Text(
-                            "Tujuan Senam Nifas",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                        ),
-                        10.horizontalSpace,
-                        const Icon(
-                          Icons.arrow_forward_outlined,
-                          color: white,
-                        ),
-                        10.horizontalSpace,
-                      ],
-                    ),
-                  ),
-                ).paddingOnly(bottom: 10.h),
-                Card(
-                  margin: EdgeInsets.zero,
-                  color: kPrimary,
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      controller.audioPlayer.pause();
-                      controller.isMusicPlayed.value = false;
-                      Get.toNamed(Routes.ALAT);
-                    },
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/images/lg0.png",
-                          height: 80.w,
-                          width: 80.w,
-                        ),
-                        10.horizontalSpace,
-                        Expanded(
-                          child: Text(
-                            "Alat Yang Diperlukan",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                        ),
-                        10.horizontalSpace,
-                        const Icon(
-                          Icons.arrow_forward_outlined,
-                          color: white,
-                        ),
-                        10.horizontalSpace,
-                      ],
-                    ),
-                  ),
-                ).paddingOnly(bottom: 10.h),
-                Card(
-                  margin: EdgeInsets.zero,
-                  color: kPrimary,
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      controller.audioPlayer.pause();
-                      controller.isMusicPlayed.value = false;
-                      Get.toNamed(
-                        Routes.PENGANTAR,
-                        arguments: halYangPerluDiperhatikan,
-                      );
-                    },
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/images/lg0.png",
-                          height: 80.w,
-                          width: 80.w,
-                        ),
-                        10.horizontalSpace,
-                        Expanded(
-                          child: Text(
-                            "Hal Yang Perlu Diperhatikan",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                        ),
-                        10.horizontalSpace,
-                        const Icon(
-                          Icons.arrow_forward_outlined,
-                          color: white,
-                        ),
-                        10.horizontalSpace,
-                      ],
-                    ),
-                  ),
-                ).paddingOnly(bottom: 10.h),
-              ],
-            ),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: const AssetImage("assets/images/lg0.png"),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            white.withOpacity(0.07),
+            BlendMode.dstATop,
           ),
         ),
-      ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          50.verticalSpace,
+          Text(
+            "Hi, ${homeController.introductionC.user.name}",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24.sp,
+            ),
+          ).paddingSymmetric(horizontal: 20.w),
+          10.verticalSpace,
+          Expanded(
+            child: RawScrollbar(
+              thumbVisibility: true,
+              thickness: 4.sp,
+              thumbColor: kPrimary,
+              notificationPredicate: (notification) => true,
+              radius: const Radius.circular(20),
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                children: [
+                  const ExpansionTile(
+                    initiallyExpanded: true,
+                    tilePadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                    ),
+                    title: Text(
+                      "Pengantar Senam Nifas",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    children: [
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        subtitle: Text(
+                          """
+    Senam nifas merupakan latihan atau gerak jasmani yang dilakukan sedini mungkin sehabis melahirkan berfungsi untuk mengembalikan kondisi kesehatan, mempercepat penyembuhan, mencegah komplikasi, memulihkan dan memperbaiki regangan pada otot- otot setelah kehamilan, terutama pada otot-otot bagian punggung, dasar panggul, dan perut.
+    \nOlahraga atau senam nifas dini efektif mempercepat penurunan fundus dan pengeluaran lochea dan membantu sirkulasi darah ke rahim, yang menyebabkanrahim berkontraksi dengan baik. Kontraksi yang baik membantu penyempitanpembuluh darah terbuka, agar perdarahan tidak terjadi, penurunan fundus uterusdan pengeluaran lochea  berlangsung lebih cepat
+        """,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Card(
+                    margin: EdgeInsets.zero,
+                    color: kPrimary.withOpacity(0.6),
+                    elevation: 0,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        controller.audioPlayer.pause();
+                        controller.isMusicPlayed.value = false;
+                        Get.toNamed(
+                          Routes.PENGANTAR,
+                          arguments: manfaatSenamNifas,
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/images/lg0.png",
+                            height: 80.w,
+                            width: 80.w,
+                          ),
+                          10.horizontalSpace,
+                          Expanded(
+                            child: Text(
+                              "Manfaat Senam Nifas",
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                          ),
+                          10.horizontalSpace,
+                          const Icon(
+                            Icons.arrow_forward_outlined,
+                            color: white,
+                          ),
+                          10.horizontalSpace,
+                        ],
+                      ),
+                    ),
+                  ).paddingOnly(bottom: 10.h),
+                  Card(
+                    margin: EdgeInsets.zero,
+                    color: kPrimary.withOpacity(0.6),
+                    elevation: 0,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        controller.audioPlayer.pause();
+                        controller.isMusicPlayed.value = false;
+                        Get.toNamed(
+                          Routes.PENGANTAR,
+                          arguments: tujuanSenamNifas,
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/images/lg0.png",
+                            height: 80.w,
+                            width: 80.w,
+                          ),
+                          10.horizontalSpace,
+                          Expanded(
+                            child: Text(
+                              "Tujuan Senam Nifas",
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                          ),
+                          10.horizontalSpace,
+                          const Icon(
+                            Icons.arrow_forward_outlined,
+                            color: white,
+                          ),
+                          10.horizontalSpace,
+                        ],
+                      ),
+                    ),
+                  ).paddingOnly(bottom: 10.h),
+                  Card(
+                    margin: EdgeInsets.zero,
+                    color: kPrimary.withOpacity(0.6),
+                    elevation: 0,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        controller.audioPlayer.pause();
+                        controller.isMusicPlayed.value = false;
+                        Get.toNamed(Routes.ALAT);
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/images/lg0.png",
+                            height: 80.w,
+                            width: 80.w,
+                          ),
+                          10.horizontalSpace,
+                          Expanded(
+                            child: Text(
+                              "Alat Yang Diperlukan",
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                          ),
+                          10.horizontalSpace,
+                          const Icon(
+                            Icons.arrow_forward_outlined,
+                            color: white,
+                          ),
+                          10.horizontalSpace,
+                        ],
+                      ),
+                    ),
+                  ).paddingOnly(bottom: 10.h),
+                  Card(
+                    margin: EdgeInsets.zero,
+                    color: kPrimary.withOpacity(0.6),
+                    elevation: 0,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        controller.audioPlayer.pause();
+                        controller.isMusicPlayed.value = false;
+                        Get.toNamed(
+                          Routes.PENGANTAR,
+                          arguments: halYangPerluDiperhatikan,
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/images/lg0.png",
+                            height: 80.w,
+                            width: 80.w,
+                          ),
+                          10.horizontalSpace,
+                          Expanded(
+                            child: Text(
+                              "Hal Yang Perlu Diperhatikan",
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                          ),
+                          10.horizontalSpace,
+                          const Icon(
+                            Icons.arrow_forward_outlined,
+                            color: white,
+                          ),
+                          10.horizontalSpace,
+                        ],
+                      ),
+                    ),
+                  ).paddingOnly(bottom: 10.h),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
