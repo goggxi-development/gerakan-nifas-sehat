@@ -22,7 +22,10 @@ class IntroductionView extends GetView<IntroductionController> {
               controller.isTop.value ? {} : Get.offAllNamed(Routes.HOME);
             },
             backgroundColor: controller.isTop.value ? Colors.grey : kPrimary,
-            child: const Icon(Icons.arrow_forward),
+            child: Icon(
+              Icons.arrow_forward,
+              size: controller.isTop.value ? 0 : 24,
+            ),
           ),
         ),
       ),
