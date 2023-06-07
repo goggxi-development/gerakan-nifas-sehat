@@ -37,7 +37,7 @@ class IntroductionView extends GetView<IntroductionController> {
             image: const AssetImage("assets/images/lg0.png"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              white.withOpacity(0.07),
+              white.withOpacity(0.2),
               BlendMode.dstATop,
             ),
           ),

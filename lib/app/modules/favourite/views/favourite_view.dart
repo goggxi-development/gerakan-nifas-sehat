@@ -17,50 +17,49 @@ class FavouriteView extends GetView<FavouriteController> {
   final MusicController musicController = Get.find<MusicController>();
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          expandedHeight: 0.5.sh,
-          flexibleSpace: FlexibleSpaceBar(
-            background: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.r),
-                  child: Image.asset(
-                    "assets/images/bg.png",
-                    width: MediaQuery.of(context).size.width,
-                    fit: BoxFit.cover,
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: const AssetImage("assets/images/lg0.png"),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            white.withOpacity(0.2),
+            BlendMode.dstATop,
+          ),
+        ),
+      ),
+      child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            expandedHeight: 0.5.sh,
+            flexibleSpace: FlexibleSpaceBar(
+              background: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12.r),
+                    child: Image.asset(
+                      "assets/images/bg.png",
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-        ),
-        SliverPadding(
-          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-          sliver: SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Container(
-              padding: const EdgeInsets.all(10),
-              // decoration: BoxDecoration(
-              //   border: Border.all(
-              //     color: Colors.black,
-              //     width: 0.5,
-              //   ),
-              //   borderRadius: BorderRadius.circular(
-              //     12.r,
-              //   ),
-              // ),
+              padding: const EdgeInsets.only(bottom: 30, top: 25),
               child: Stack(
+                alignment: Alignment.center,
                 children: [
-                  Center(
-                    child: Image.asset(
-                      "assets/images/soundwaves.png",
-                      height: 0.1.sh,
-                      width: 1.sw,
-                    ),
+                  Image.asset(
+                    "assets/images/sound.png",
+                    width: context.width,
+                    fit: BoxFit.fitWidth,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -101,130 +100,131 @@ class FavouriteView extends GetView<FavouriteController> {
               ),
             ),
           ),
-        ),
-        SliverPadding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          sliver: GetBuilder<FavouriteController>(
-            init: FavouriteController(),
-            initState: (_) {
-              controller.update();
-            },
-            builder: (_) {
-              return FutureBuilder(
-                future: controller.box,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    if (snapshot.hasError) {
-                      return SliverFillRemaining(
-                        child: Center(
-                          child: Text(snapshot.error.toString()),
-                        ),
-                      );
-                    } else {
-                      var gerakanNifas = Hive.box('gerakanNifases');
-                      List list = gerakanNifas.values.toList();
-                      list.sort((a, b) => a.number.compareTo(b.number));
-                      return SliverList.builder(
-                        itemCount: list.length,
-                        itemBuilder: (context, index) {
-                          final gerakanNifasModel =
-                              list[index] as GerakanNifasModel;
-                          return Visibility(
-                            visible: gerakanNifasModel.isFavourite ?? false,
-                            child: Card(
-                              margin: EdgeInsets.only(bottom: 10.h),
-                              color: kPrimary,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.r),
-                              ),
-                              child: InkWell(
-                                onTap: () async {
-                                  var data = await Get.toNamed(
-                                    Routes.DETAIL_GERAKAN,
-                                    arguments: index,
-                                  );
-                                  if (data == null) {
-                                    controller.update();
-                                  }
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Visibility(
-                                        visible: gerakanNifasModel.title ==
-                                                gerakanNifasAll
-                                            ? false
-                                            : true,
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Hari\nKe-$index ",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14.sp,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            10.horizontalSpace,
-                                          ],
-                                        ),
-                                      ),
-                                      const Icon(
-                                        Icons.arrow_forward_outlined,
-                                        color: white,
-                                      ),
-                                      10.horizontalSpace,
-                                      Expanded(
-                                        child: Text(
-                                          gerakanNifasModel.title,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14.sp,
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            sliver: GetBuilder<FavouriteController>(
+              init: FavouriteController(),
+              initState: (_) {
+                controller.update();
+              },
+              builder: (_) {
+                return FutureBuilder(
+                  future: controller.box,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      if (snapshot.hasError) {
+                        return SliverFillRemaining(
+                          child: Center(
+                            child: Text(snapshot.error.toString()),
+                          ),
+                        );
+                      } else {
+                        var gerakanNifas = Hive.box('gerakanNifases');
+                        List list = gerakanNifas.values.toList();
+                        list.sort((a, b) => a.number.compareTo(b.number));
+                        return SliverList.builder(
+                          itemCount: list.length,
+                          itemBuilder: (context, index) {
+                            final gerakanNifasModel =
+                                list[index] as GerakanNifasModel;
+                            return Visibility(
+                              visible: gerakanNifasModel.isFavourite ?? false,
+                              child: Card(
+                                margin: EdgeInsets.only(bottom: 10.h),
+                                color: kPrimary,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                ),
+                                child: InkWell(
+                                  onTap: () async {
+                                    var data = await Get.toNamed(
+                                      Routes.DETAIL_GERAKAN,
+                                      arguments: index,
+                                    );
+                                    if (data == null) {
+                                      controller.update();
+                                    }
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Visibility(
+                                          visible: gerakanNifasModel.title ==
+                                                  gerakanNifasAll
+                                              ? false
+                                              : true,
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                "Hari\nKe-$index ",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 14.sp,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              10.horizontalSpace,
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                      10.horizontalSpace,
-                                      IconButton(
-                                        onPressed: () {
-                                          gerakanNifasModel.isFavourite =
-                                              !gerakanNifasModel.isFavourite!;
-                                          gerakanNifas.put(
-                                            gerakanNifasModel.id,
-                                            gerakanNifasModel,
-                                          );
-                                          controller.update();
-                                        },
-                                        icon: Icon(
-                                          Icons.favorite,
-                                          color: mainOrange,
-                                          size: 28.h,
+                                        const Icon(
+                                          Icons.arrow_forward_outlined,
+                                          color: white,
                                         ),
-                                      ),
-                                      10.horizontalSpace,
-                                    ],
+                                        10.horizontalSpace,
+                                        Expanded(
+                                          child: Text(
+                                            gerakanNifasModel.title,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14.sp,
+                                            ),
+                                          ),
+                                        ),
+                                        10.horizontalSpace,
+                                        IconButton(
+                                          onPressed: () {
+                                            gerakanNifasModel.isFavourite =
+                                                !gerakanNifasModel.isFavourite!;
+                                            gerakanNifas.put(
+                                              gerakanNifasModel.id,
+                                              gerakanNifasModel,
+                                            );
+                                            controller.update();
+                                          },
+                                          icon: Icon(
+                                            Icons.favorite,
+                                            color: mainOrange,
+                                            size: 28.h,
+                                          ),
+                                        ),
+                                        10.horizontalSpace,
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        );
+                      }
+                    } else {
+                      return const SliverFillRemaining(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
                       );
                     }
-                  } else {
-                    return const SliverFillRemaining(
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    );
-                  }
-                },
-              );
-            },
+                  },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
