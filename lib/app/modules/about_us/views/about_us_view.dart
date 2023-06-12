@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:hamil_sehat/app/components/colors.dart';
+import 'package:hamil_sehat/app/modules/web_page.dart';
 
 import '../controllers/about_us_controller.dart';
 
@@ -137,6 +138,18 @@ class AboutUsView extends GetView<AboutUsController> {
                     ],
                   ).paddingOnly(left: 16, bottom: 20),
                 ],
+              ),
+              ListTile(
+                title: const Text("Kebijakan Privasi"),
+                onTap: () {
+                  Get.to(
+                    const WebViewPage(
+                      url:
+                          'https://rumahbeku-morut-app.web.app/external-gns-privacy-policy',
+                      title: '',
+                    ),
+                  );
+                },
               ),
             ],
           ),

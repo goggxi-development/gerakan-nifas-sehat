@@ -1,16 +1,24 @@
 # hamil_sehat
 
-A new Flutter project.
+## step deploy
+### setup jks
+```bash
+# 1
+cd android
+# 2
+keytool -genkey -v -keystore gns.jks -keyalg RSA -keysize 2048 -validity 10000 -alias gns
+```
+## JKS
+```bash
+# pas: gerakannifassehat
+# jks: gns.jks
+# First & Last Name : gns app
+# organization: gns
+# two-letter country: 62
+```
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### setup key.properties & build.gradle
+### build abb
+```bash
+sh abb.sh
+```

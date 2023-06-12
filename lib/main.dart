@@ -1,5 +1,3 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,34 +45,27 @@ Future<void> main() async {
   ).then(
     (value) {
       return runApp(
-        DevicePreview(
-          enabled: !kReleaseMode,
-          builder: (context) {
-            return ScreenUtilInit(
-              designSize: const Size(392, 852),
-              builder: (_, __) {
-                SystemChrome.setSystemUIOverlayStyle(
-                  const SystemUiOverlayStyle(
-                    statusBarColor: kPrimary,
-                    statusBarIconBrightness: Brightness.light,
-                  ),
-                );
-                return GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-                  child: GetMaterialApp(
-                    debugShowCheckedModeBanner: false,
-                    title: "GNS",
-                    home: SplashPage(boxData: boxData),
-                    getPages: AppPages.routes,
-                    locale: DevicePreview.locale(context),
-                    builder: DevicePreview.appBuilder,
-                    onInit: () {
-                      Get.put<MusicController>(MusicController());
-                    },
-                  ),
-                );
-              },
+        ScreenUtilInit(
+          designSize: const Size(392, 852),
+          builder: (_, __) {
+            SystemChrome.setSystemUIOverlayStyle(
+              const SystemUiOverlayStyle(
+                statusBarColor: kPrimary,
+                statusBarIconBrightness: Brightness.light,
+              ),
+            );
+            return GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              child: GetMaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: "GNS",
+                home: SplashPage(boxData: boxData),
+                getPages: AppPages.routes,
+                onInit: () {
+                  Get.put<MusicController>(MusicController());
+                },
+              ),
             );
           },
         ),
