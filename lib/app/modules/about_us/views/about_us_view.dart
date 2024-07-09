@@ -38,7 +38,7 @@ class AboutUsView extends GetView<AboutUsController> {
                 children: [
                   ListTile(
                     subtitle: Text(
-                      "Aplikasi android gerak nifas sehat (GNS) adalah aplikasi berbasis android yang menyediakan informasi kesehatan dimanakah fitur didalamnya terdapat pengetahuan senam nifas, gerakan senam nifas ini untuk ibu yang persalinanya normal\n\nAplikasi ini di buat oleh Gefi Nursetiawanti berkolaborasi dengan programmer\n",
+                      "Aplikasi android gerak nifas sehat (GNS) adalah aplikasi berbasis android yang menyediakan informasi kesehatan dimanakah fitur didalamnya terdapat pengetahuan senam nifas, gerakan senam nifas ini untuk ibu yang persalinanya normal\n\nAplikasi ini di buat oleh Gefi Nursetiawanti berkolaborasi dengan Muhammad Hisammudin\n",
                     ),
                   ),
                 ],
